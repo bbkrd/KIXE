@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
+    <tocitem text="KIX">
+        <tocitem text="Commands with Examples">
+            <tocitem text="KIXE" target="kixe.possible_commands#KIXE"/>
+            <tocitem text="WBGE" target="kixe.possible_commands#WBGE"/>
+            <tocitem text="UNC.PER" target="kixe.possible_commands#UNC.PER"/>
+            <tocitem text="CHA.PER" target="kixe.possible_commands#CHA.PER"/>
+        </tocitem>
+        <tocitem text="KIXE - Method of Calculation" target="KIXE.MethodOfCalculation"/>
+    </tocitem>
+</toc>

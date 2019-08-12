@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang ="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Possible Commands for KIXE</title>
+
+        <style>
+            h1 {font-size: 28px;}
+
+            h2 {font-size: 18px;}
+
+            h3 {font-size: 16px;}
+
+            body {
+                font-family: "Arial", Helvetica, sans-serif;
+                font-size: 14px;
+                color: black;
+            }
+
+        </style>
+    </head>
+    <body lang="en-US">
+        <h1>Possible Commands for KIXE</h1>
+        <p>Version: 1.0 (2018-08-21)</p>
+
+        <h2><a id="KIXE">KIXE</a></h2>
+        Aggregation of chained time series with one-quarter overlap method (one-month overlap method)<br/>
+        Formula: [Name=]KIXE,i1,[w1,]+/-,i2,[w2,]...,refyr<br/>
+        Examples:
+        <dl>
+            <dt><b>1. </b><i>KIXE,i1,+,i2,2005</i></dt>
+            <dd>The shortest version of the KIXE command. The programm will do an additive aggregation of the index series <b>i1</b> and <b>i2</b> with the referenz year <b>2005</b>.<br/>
+                As weights for the aggregation it will use the weight series <b>w1</b> for <b>i1</b> and <b>w2</b> for <b>i2</b>.</dd>
+
+            <dt><b>2. </b><i>KIXE,i1,w3,+,i2,w1,2005</i></dt>
+            <dd>The programm will do an additive aggregation of the index series <b>i1</b> and <b>i2</b> with the referenz year <b>2005</b>.<br/>
+                As weights for the aggregation it will use the weight series <b>w3</b> for <b>i1</b> and <b>w1</b> for <b>i2</b>.</dd>
+
+            <dt><b>3. </b><i>KIXE,i1,+,i2,-,i3,2010</i></dt>
+            <dd>The programm will do an additive aggregation of the index series <b>i1</b> and <b>i2</b> and an subtractive aggregation of the index series <b>i3</b> with the referenz year <b>2010</b>.<br/>
+                As weights for the aggregation it will use the weight series <b>w1</b> for <b>i1</b>, <b>w2</b> for <b>i2</b> and <b>w3</b> for <b>i3</b>.</dd>
+
+            <dt><b>4. </b><i>CLI.PER,i1,+,i2,-,i3,2010</i></dt>
+            <dd>The programm will do an additive aggregation of the index series <b>i1</b> and <b>i2</b> and an subtractive aggregation of the index series <b>i3</b> with the referenz year <b>2010</b>.<br/>
+                As weights for the aggregation it will use the weight series <b>w1</b> for <b>i1</b>, <b>w2</b> for <b>i2</b> and <b>w3</b> for <b>i3</b>.</dd>
+
+            <dt><b>5. </b><i>Example5=KIXE,i1,+,i2,-,i3,2010</i></dt>
+            <dd>The same as <b>Example 3</b> but the programm will name the resulting time series <b>Example5</b>.</dd>
+        </dl>
+
+        <h2><a id="WBGE">WBGE</a></h2>
+        Calculates the growth rate contribution of a chained time series (iContr) to another chained time series (iTotal) lagged by #ofLags.<br/>
+        The number of lags must be between 1 and the periodicity of the time series. Chaining and unchaining is done with the one-quarter overlap method (one-month overlap method).<br/>
+        Formula: [Name=]WBGE,iContr,[wContr,]iTotal,[wTotal,]#ofLags<br/>
+        Examples:
+        <dl>
+            <dt><b>1. </b><i>WBGE,i1,i2,2</i></dt>
+            <dd>The shortest version of the WBGE command. The programm will calculate the growth rate contribution of the index series <b>i1</b> to <b>i2</b> lagged by <b>2</b> periods.<br/>
+                As weights for the calculation it will use the weight series <b>w1</b> for <b>i1</b> and <b>w2</b> for <b>i2</b>.</dd>
+
+            <dt><b>2. </b><i>WBGE,i1,w3,i2,w1,2</i></dt>
+            <dd>The programm will calculate the growth rate contribution of the index series <b>i1</b> to <b>i2</b> lagged by <b>2</b> periods.<br/>
+                As weights for the calculation it will use the weight series <b>w3</b> for <b>i1</b> and <b>w1</b> for <b>i2</b>.</dd>
+
+            <dt><b>3. </b><i>CTG.PER,i1,w3,i2,w1,2</i></dt>
+            <dd>The programm will calculate the growth rate contribution of the index series <b>i1</b> to <b>i2</b> lagged by <b>2</b> periods.<br/>
+                As weights for the calculation it will use the weight series <b>w3</b> for <b>i1</b> and <b>w1</b> for <b>i2</b>.</dd>
+
+            <dt><b>4. </b><i>Example4=WBGE,i1,w3,i2,w1,2</i></dt>
+            <dd>The same as <b>Example 2</b> but the programm will name the resulting time series <b>Example4</b>.</dd>
+        </dl>
+
+        <h2><a id="UNC.PER">UNC.PER</a></h2>
+        Unchain a chained time series (i1) with the one-quarter overlap method (one-month overlap method).<br/>
+        Formula: [Name=]UNC.PER,i1<br/>
+        Examples:
+        <dl>
+            <dt><b>1. </b><i>UNC.PER,i1</i></dt>
+            <dd>The programm will unchain the index series <b>i1</b>.</dd>
+
+            <dt><b>2. </b><i>UNC.PER,w1</i></dt>
+            <dd>The programm will unchain the weight series <b>w1</b>.</dd>
+
+            <dt><b>3. </b><i>Example3=UNC.PER,i1</i></dt>
+            <dd>The same as <b>Example 1</b> but the programm will name the resulting time series <b>Example3</b>.</dd>
+        </dl>
+
+        <h2><a id="CHA.PER">CHA.PER</a></h2>
+        Chain a time series (i1) with the one-quarter overlap method (one-month overlap method).<br/>
+        Formula: [Name=]CHA.PER,i1[,refyr]<br/>
+        Examples:
+        <dl>
+            <dt><b>1. </b><i>CHA.PER,i1</i></dt>
+            <dd>The programm will chain the index series <b>i1</b>. The resulting time series is normalized on the first year.</dd>
+
+            <dt><b>2. </b><i>CHA.PER,w1</i></dt>
+            <dd>The programm will chain the weight series <b>w1</b>. The resulting time series is normalized on the first year.</dd>
+
+            <dt><b>3. </b><i>CHA.PER,i1,2005</i></dt>
+            <dd>The programm will chain the index series <b>i1</b>. The resulting time series is normalized on <b>2005</b>.</dd>
+
+            <dt><b>4. </b><i>Example4=CHA.PER,i1</i></dt>
+            <dd>The same as <b>Example 1</b> but the programm will name the resulting time series <b>Example4</b>.</dd>
+        </dl>
+    </body>
+</html>
