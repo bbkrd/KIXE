@@ -6,6 +6,9 @@ and open the template in the editor.
 -->
 <!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN" "http://java.sun.com/products/javahelp/map_2_0.dtd">
 <map version="2.0">
-    <mapID target="kixe.possible_commands" url="kixe-possible_commands.html"/>
+    <mapID target="kixe.possible_commands#KIXE" url="kixe-possible_commands.html#KIXE"/>
+    <mapID target="kixe.possible_commands#WBGE" url="kixe-possible_commands.html#WBGE"/>
+    <mapID target="kixe.possible_commands#UNC.PER" url="kixe-possible_commands.html#UNC.PER"/>
+    <mapID target="kixe.possible_commands#CHA.PER" url="kixe-possible_commands.html#CHA.PER"/>
     <mapID target="KIXE.MethodOfCalculation" url="kixe-methodofcalculation.html"/>
 </map>
